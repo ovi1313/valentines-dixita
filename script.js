@@ -1,13 +1,39 @@
+let currentAudio = null;
+
+// Function to play music
+function playMusic(src) {
+    if (currentAudio) {
+        currentAudio.pause();
+    }
+    currentAudio = new Audio(src);
+    currentAudio.loop = true;
+    currentAudio.play().catch(error => {
+        console.log('Autoplay was prevented. Adding a play button.');
+        addPlayButton(src);
+    });
+}
+
+// Function to add a play button if autoplay is prevented
+function addPlayButton(src) {
+    const content = document.getElementById('content');
+    const playButton = document.createElement('button');
+    playButton.textContent = 'Play Music';
+    playButton.addEventListener('click', () => {
+        if (currentAudio) {
+            currentAudio.pause();
+        }
+        currentAudio = new Audio(src);
+        currentAudio.loop = true;
+        currentAudio.play();
+        playButton.remove();
+    });
+    content.appendChild(playButton);
+}
+
 document.getElementById('start-btn').addEventListener('click', function() {
-    playMusic('songs/128-Guzarish - Ghajini 128 Kbps (mp3cut.net).mp3');
+    playMusic('music/music6.mp3');
     showCatImages();
 });
-
-function playMusic(src) {
-    const audio = new Audio(src);
-    audio.loop = true;
-    audio.play();
-}
 
 function showCatImages() {
     const content = document.getElementById('content');
@@ -16,8 +42,10 @@ function showCatImages() {
         <img src="images/death note matching icons.jpg" alt="Cat Image 2">
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-Bheegi Si Bhaagi Si - Raajneeti 128 Kbps (1) (mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showAwkwardText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music8.mp3');
+        showAwkwardText();
+    });
 }
 
 function showAwkwardText() {
@@ -26,8 +54,10 @@ function showAwkwardText() {
         <h2>Well, I know this is awkward 😭</h2>
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-Bheegi_Si_Bhaagi_Si_-_Raajneeti_128_Kbps_(1)_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', askAboutValentines);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music5.mp3');
+        askAboutValentines();
+    });
 }
 
 function askAboutValentines() {
@@ -40,8 +70,10 @@ function askAboutValentines() {
         <label><input type="radio" name="valentines" value="hate it"> Hate it</label>
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-Jeene_Laga_Hoon_-_Ramaiya_Vastavaiya_128_Kbps_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', askAboutCelebration);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music7.mp3');
+        askAboutCelebration();
+    });
 }
 
 function askAboutCelebration() {
@@ -54,8 +86,10 @@ function askAboutCelebration() {
         <label><input type="radio" name="celebration" value="never"> Never</label>
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/Gulabi_Aankhen_Universally_Sanam_128_Kbps_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showFeelingsText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music2.mp3');
+        showFeelingsText();
+    });
 }
 
 function showFeelingsText() {
@@ -64,8 +98,10 @@ function showFeelingsText() {
         <h2>Well, I know these distances keep us apart, but my feelings do not alter.</h2>
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-Tu_Jaane_Na_-_Ajab_Prem_Ki_Ghazab_Kahani_128_Kbps_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showFirstDayText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music9.mp3');
+        showFirstDayText();
+    });
 }
 
 function showFirstDayText() {
@@ -74,8 +110,10 @@ function showFirstDayText() {
         <h2>Since the first day I saw you, I felt something in me.</h2>
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/Cutting Crew_-_(I_Just)_Died_In_Your_Arms_(Official_Music_Video)_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showMeanText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music10.mp3');
+        showMeanText();
+    });
 }
 
 function showMeanText() {
@@ -85,8 +123,10 @@ function showMeanText() {
         <img src="images/474099622_1163071962155975_3470776591597852520_n_(1).jpg" alt="me">
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-Bheegi_Si_Bhaagi_Si_-_Raajneeti_128_Kbps_(1)_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showFellForYouText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music8.mp3');
+        showFellForYouText();
+    });
 }
 
 function showFellForYouText() {
@@ -97,8 +137,10 @@ function showFellForYouText() {
         <img src="images/image_processing20191010-4-pcjcgb.jpg" alt="bunny den">
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-Pehli_Nazar_Mein_-_Race_128_Kbps_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showDontShowItText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music12.mp3');
+        showDontShowItText();
+    });
 }
 
 function showDontShowItText() {
@@ -107,8 +149,10 @@ function showDontShowItText() {
         <h2>I don't show it, to not make it awkward, and I know online doesn't work, but I'm happy to have you regardless.</h2>
         <button id="next-btn">Okay</button>
     `;
-    playMusic('songs/Rokudenashi_-_ただ声一つ_Tada_Koe_Hitotsu_(Just_One_Voice)__Piano_Tutorial.mp3');
-    document.getElementById('next-btn').addEventListener('click', showDesireText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music14.mp3');
+        showDesireText();
+    });
 }
 
 function showDesireText() {
@@ -117,8 +161,10 @@ function showDesireText() {
         <h2>I desire you, I adore you.</h2>
         <button id="next-btn">Okay</button>
     `;
-    playMusic('songs/I_Think_They_Call_This_Love_Ringtone_Download_-_MobCup.Com.Co.mp3');
-    document.getElementById('next-btn').addEventListener('click', showRating);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music1.mp3');
+        showRating();
+    });
 }
 
 function showRating() {
@@ -138,7 +184,7 @@ function showRating() {
 function showBirthDatesText() {
     const content = document.getElementById('content');
     content.innerHTML = `
-        <h2>Those digits were your birth dates lol ion know what im sayin lol</h2>
+        <h2>Those digits were your birth dates lol</h2>
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', showGirlsText);
@@ -154,8 +200,10 @@ function showGirlsText() {
         <img src="images/go8GUz7poytTvm9P9HNHQ3T84N1.jpg" alt="Kriti Sanon">
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-Kukkad_-_Student_Of_The_Year_128_Kbps_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showChooseText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music4.mp3');
+        showChooseText();
+    });
 }
 
 function showChooseText() {
@@ -164,8 +212,10 @@ function showChooseText() {
         <h2>But do you know whom I want to have? Do you know who I would choose over all these given the chance?</h2>
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/Cutting Crew_-_(I_Just)_Died_In_Your_Arms_(Official_Music_Video)_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showHintText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music9.mp3');
+        showHintText();
+    });
 }
 
 function showHintText() {
@@ -174,8 +224,10 @@ function showHintText() {
         <h2>Hint: She plays COD, has a dog and a cat, two sisters, likes momo, and supports Barca 😑😒</h2>
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/Gulabi_Aankhen_Universally_Sanam_128_Kbps_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showMirrorPic);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music11.mp3');
+        showMirrorPic();
+    });
 }
 
 function showMirrorPic() {
@@ -185,8 +237,10 @@ function showMirrorPic() {
         <img src="images/474643101_1143588693932858_3607986806516585990_n.jpg" alt="Mirror Pic">
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-Guzarish_-_Ghajini_128_Kbps_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showOldWomanPic);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music6.mp3');
+        showOldWomanPic();
+    });
 }
 
 function showOldWomanPic() {
@@ -196,8 +250,10 @@ function showOldWomanPic() {
         <img src="images/old-nepalese-woman-kathmandu-nepal-asia-KM0AK9.jpg" alt="Old Woman">
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/jocofullinterview41_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showLoveYouText);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music5.mp3');
+        showLoveYouText();
+    });
 }
 
 function showLoveYouText() {
@@ -206,8 +262,10 @@ function showLoveYouText() {
         <h2>But I would still LOVE YOU💗💗</h2>
         <button id="next-btn">Continue</button>
     `;
-    playMusic('songs/128-I_Love_You_-_Bodyguard_128_Kbps_(mp3cut.net).mp3');
-    document.getElementById('next-btn').addEventListener('click', showValentineProposal);
+    document.getElementById('next-btn').addEventListener('click', () => {
+        playMusic('music/music13.mp3');
+        showValentineProposal();
+    });
 }
 
 function showValentineProposal() {
@@ -216,8 +274,10 @@ function showValentineProposal() {
         <h2>Dixita Sharma, would you be my Online Valentine?</h2>
         <button id="yes-btn">Yes</button>
     `;
-    playMusic('songs/Blue_Yung_Kai_Mp3_Download_Ringtone_-_MobCup.Com.Co.mp3');
-    document.getElementById('yes-btn').addEventListener('click', showCoupleCats);
+    document.getElementById('yes-btn').addEventListener('click', () => {
+        playMusic('music/music3.mp3');
+        showCoupleCats();
+    });
 }
 
 function showCoupleCats() {
@@ -228,5 +288,5 @@ function showCoupleCats() {
         <img src="images/470057438_1106251534211332_3137401872797282078_n.jpg" alt="Cute Image">
         <img src="images/472334904_1652437555347607_2182129606558583818_n.jpg" alt="Cute Image 2">
     `;
-    playMusic('songs/Rokudenashi_-_ただ声一つ_Tada_Koe_Hitotsu_(Just_One_Voice)__Piano_Tutorial.mp3');
+    playMusic('music/music14.mp3');
 }

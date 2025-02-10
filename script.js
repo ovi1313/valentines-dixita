@@ -120,7 +120,7 @@ function showMeanText() {
     const content = document.getElementById('content');
     content.innerHTML = `
         <h2>But I stayed, refrained my feelings, and was mean to you lol 😭</h2>
-        <img src="images/474099622_1163071962155975_3470776591597852520_n (1).jpg" alt="me">
+        <img src="images/474099622_1163071962155975_3470776591597852520_n_(1).jpg" alt="me">
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {

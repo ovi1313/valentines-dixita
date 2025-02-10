@@ -1,5 +1,5 @@
 document.getElementById('start-btn').addEventListener('click', function() {
-    playMusic('music1.mp3');
+    playMusic('songs/128-Guzarish - Ghajini 128 Kbps (mp3cut.net).mp3');
     showCatImages();
 });
 
@@ -12,11 +12,11 @@ function playMusic(src) {
 function showCatImages() {
     const content = document.getElementById('content');
     content.innerHTML = `
-        <img src="cat1.jpg" alt="Cat Image 1">
-        <img src="cat2.jpg" alt="Cat Image 2">
+        <img src="images/3396d75ebfd5f9fb1f1d2e413e684e48.jpg" alt="Cat Image 1">
+        <img src="images/death note matching icons.jpg" alt="Cat Image 2">
         <button id="next-btn">Continue</button>
     `;
-    playMusic('music2.mp3');
+    playMusic('songs/128-Bheegi Si Bhaagi Si - Raajneeti 128 Kbps (1) (mp3cut.net).mp3');
     document.getElementById('next-btn').addEventListener('click', showAwkwardText);
 }
 

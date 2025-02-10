@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6e6;
+    color: #800000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    padding: 20px;
+}
+
+h1, h2, p {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #e60000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input[type="radio"] {
+    margin: 10px;
+}

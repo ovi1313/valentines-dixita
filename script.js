@@ -31,7 +31,7 @@ function addPlayButton(src) {
 }
 
 document.getElementById('start-btn').addEventListener('click', function() {
-    playMusic('');
+    playMusic('music/music8.mp3');
     showCatImages();
 });
 
@@ -43,7 +43,7 @@ function showCatImages() {
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('music/music8.mp3');
+        playMusic('');
         showAwkwardText();
     });
 }
@@ -120,7 +120,7 @@ function showMeanText() {
     const content = document.getElementById('content');
     content.innerHTML = `
         <h2>But I stayed, refrained my feelings, and was mean to you lol 😭</h2>
-        <img src="images/474099622_1163071962155975_3470776591597852520_n (1).jpg.jpg" alt="me">
+        <img src="images/474099622_1163071962155975_3470776591597852520_n (1).jpg" alt="me">
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
@@ -238,7 +238,7 @@ function showMirrorPic() {
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('music/music6.mp3');
+        playMusic('music/music8.mp3');
         showOldWomanPic();
     });
 }

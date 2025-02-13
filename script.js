@@ -43,7 +43,7 @@ function showCatImages() {
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('');
+        playMusic('music/music5.mp3');
         showAwkwardText();
     });
 }
@@ -55,7 +55,7 @@ function showAwkwardText() {
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('music/music5.mp3');
+        playMusic('music/music7.mp3');
         askAboutValentines();
     });
 }
@@ -71,7 +71,7 @@ function askAboutValentines() {
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('music/music7.mp3');
+        playMusic('music/music11.mp3');
         askAboutCelebration();
     });
 }
@@ -87,7 +87,7 @@ function askAboutCelebration() {
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('music/music2.mp3');
+        playMusic('music/music12.mp3');
         showFeelingsText();
     });
 }
@@ -150,7 +150,7 @@ function showDontShowItText() {
         <button id="next-btn">Okay</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('music/music14.mp3');
+        playMusic('music/music1.mp3');
         showDesireText();
     });
 }
@@ -162,7 +162,7 @@ function showDesireText() {
         <button id="next-btn">Okay</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('music/music1.mp3');
+        playMusic('music/music5.mp3');
         showRating();
     });
 }
@@ -225,7 +225,7 @@ function showHintText() {
         <button id="next-btn">Continue</button>
     `;
     document.getElementById('next-btn').addEventListener('click', () => {
-        playMusic('music/music11.mp3');
+        playMusic('music/music13.mp3');
         showMirrorPic();
     });
 }
